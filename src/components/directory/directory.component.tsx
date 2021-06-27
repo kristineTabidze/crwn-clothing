@@ -46,6 +46,7 @@ const Directory: React.FC<{}> = ({}) => {
           key={section.id}
           imageUrl={section.imageUrl}
           size={section?.size || ""}
+          url={section.linkUrl}
         />
       ))}
     </div>

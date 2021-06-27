@@ -1,11 +1,18 @@
 import "./App.css";
-import { Homepage } from "./pages/Homepage";
+import { HomePage } from "./pages/HomePage";
+import { Route, BrowserRouter } from "react-router-dom";
+import { HatsPage } from "./pages/HatsPage";
+import { ShopPage } from "./pages/ShopPage";
 
 function App() {
   return (
-    <div className="App">
-      <Homepage />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Route exact path="/" component={HomePage} />
+        <Route exact path="/hats" component={HatsPage} />
+        <Route exact path="/shop" component={ShopPage} />
+      </div>
+    </BrowserRouter>
   );
 }
 
