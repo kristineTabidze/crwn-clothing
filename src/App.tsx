@@ -1,20 +1,20 @@
+import { Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
-import { Route, BrowserRouter } from "react-router-dom";
+import Directory from "./components/directory/directory.component";
 import { HatsPage } from "./pages/HatsPage";
-import { ShopPage } from "./pages/ShopPage";
 import { HomePage } from "./pages/HomePage";
-import Header from "./components/header/header.component";
+import { ShopPage } from "./pages/ShopPage";
+import React from "react";
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        {/* <Header /> */}
-        <Route exact path="/" component={HomePage} />
-        <Route exact path="/hats" component={HatsPage} />
+    <div>
+      <Router>
+        <Route exact path="/" component={Directory} />
+        <Route exact path="/hats" component={HomePage} />
         <Route exact path="/shop" component={ShopPage} />
-      </div>
-    </BrowserRouter>
+      </Router>
+    </div>
   );
 }
 

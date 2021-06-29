@@ -4,23 +4,16 @@ import "./menu-item.styles.scss";
 
 interface IMenuItem {
   title: string;
-  subTitle: string;
   imageUrl: string;
   size: string;
-  url: string;
+  linkUrl: string;
 }
 
-const MenuItem: React.FC<IMenuItem> = ({
-  title,
-  subTitle,
-  imageUrl,
-  size,
-  url,
-}) => {
+const MenuItem: React.FC<IMenuItem> = ({ title, imageUrl, size, linkUrl }) => {
   const history = useHistory();
   const redirectToPage = useCallback(() => {
-    history.push(url);
-  }, [url]);
+    history.push(linkUrl);
+  }, [linkUrl]);
 
   return (
     <div className={`${size} menu-item`} onClick={redirectToPage}>
