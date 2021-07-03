@@ -1,17 +1,26 @@
-import { Switch, Route, Router } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
-import Directory from "./components/directory/directory.component";
+import Header from "./components/header/header.component";
+import { auth } from "./firebase/firebase.utils";
 import { HatsPage } from "./pages/HatsPage";
 import { HomePage } from "./pages/HomePage";
 import { ShopPage } from "./pages/ShopPage";
-import React from "react";
-import Header from "./components/header/header.component";
 import SignInAndSignUp from "./pages/SignInAndSignUp";
 
-function App() {
+const App: React.FC = () => {
+  const [currentUser, setCurrentUser] = useState<any>(null);
+  let unsubscribeFromAuth: any = null;
+  useEffect(() => {
+    unsubscribeFromAuth = auth.onAuthStateChanged((user) =>
+      setCurrentUser(user)
+    );
+    return () => unsubscribeFromAuth();
+  }, []);
+
   return (
     <>
-      <Header />
+      <Header currentUser={currentUser} />
       <div className="App">
         <Switch>
           <Route exact path="/" component={HomePage} />
@@ -22,6 +31,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
 export default App;
