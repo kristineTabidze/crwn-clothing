@@ -1,0 +1,49 @@
+.item {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  width: calc(25% - 50px);
+  height: 400px;
+  cursor: pointer;
+  transition: 0.3s;
+  position: relative;
+
+  &:hover {
+    .shop-button {
+      position: absolute;
+      left: 0;
+      right: 0;
+      width: 100%;
+      bottom: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 70px;
+      width: 74%;
+      background: white;
+      opacity: 0.6;
+      margin: 0 auto;
+    }
+    .img {
+      opacity: 0.8;
+    }
+  }
+  .img {
+    width: 100%;
+    height: calc(100% - 30px);
+    background-position: center;
+    background-size: cover;
+  }
+  .shop-button {
+    display: none;
+  }
+
+  .footer {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 20px;
+  }
+}
