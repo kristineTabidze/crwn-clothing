@@ -18,7 +18,11 @@ const FormInput: React.FC<{
         type={type}
         required={required}
       />
-      <label className={`${value?.length ? "shrink" : ""} form-input-label `}>
+      <label
+        className={`${
+          value && value.length > 0 ? "shrink" : ""
+        } form-input-label `}
+      >
         {label}
       </label>
     </div>

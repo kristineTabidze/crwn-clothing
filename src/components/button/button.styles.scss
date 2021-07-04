@@ -12,4 +12,12 @@
     color: black;
     background: white;
   }
+  &.google-sign-in {
+    background-color: #4285f4;
+    color: white;
+    &:hover {
+      border: none;
+      background: #357af8;
+    }
+  }
 }
