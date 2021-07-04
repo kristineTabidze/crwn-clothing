@@ -11,16 +11,18 @@ const Header: React.FC<{ currentUser: any }> = ({ currentUser }) => {
         <Logo />
       </Link>
       <span className="options-container">
-        <Link to="/shop" className="logo-container">
+        <Link to="/shop" className="button">
           SHOP
         </Link>
-        <Link to="/shop" className="logo-container">
+        <Link to="/shop" className="button">
           CONTACT
         </Link>
         {currentUser ? (
-          <div onClick={() => auth.signOut()}>SIGN OUT</div>
+          <div className="button" onClick={() => auth.signOut()}>
+            SIGN OUT
+          </div>
         ) : (
-          <Link to="/sign-in" className="logo-container">
+          <Link to="/sign-in" className="button">
             SIGN IN
           </Link>
         )}

@@ -12,9 +12,22 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    cursor: pointer;
+    &:hover {
+      .button {
+        font-size: 16px;
+      }
+    }
   }
   .logo-container {
     width: 70px;
     padding: 10px;
+  }
+  .button {
+    margin: 0 15px;
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.5s;
   }
 }
